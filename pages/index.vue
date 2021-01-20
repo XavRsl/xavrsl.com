@@ -1,9 +1,6 @@
 <template>
-  <p v-if="$fetchState.pending">Fetching mountains...</p>
-  <p v-else-if="$fetchState.error">An error occurred :(</p>
   <div
-    v-else
-    class="container mx-auto bg-white font-sans text-xs shadow-md rounded-xl print:rounded-none"
+    class="container mx-auto bg-white font-sans text-xs shadow-lg rounded-xl print:rounded-none"
     style="height: 29.6cm; width: 21cm"
     @mouseover="hover = true"
     @mouseleave="hover = false"
@@ -13,7 +10,9 @@
       class="absolute border-dashed border-red-400 border-2 print:border-none"
       style="height: 29.6cm; width: 21cm"
     ></div>
-    <div class="flex">
+    <empty-state v-if="$fetchState.pending"></empty-state>
+    <error-state v-else-if="$fetchState.error"></error-state>
+    <div v-else class="flex">
       <div class="px-12 pt-12 flex-grow">
         <h1 class="text-4xl font-serif">{{ resume.basics.name }}</h1>
         <h2 class="text-xs uppercase">{{ resume.basics.label }}</h2>
@@ -94,7 +93,7 @@
 
         <main-block class="text-gray-200" title="Compétences">
           <div
-            v-for="(skill, index) in generalSkills"
+            v-for="(skill, index) in resume.skills"
             :key="index"
             class="flex-col"
           >
@@ -155,16 +154,6 @@ export default {
       }
 
       return `${this.resume.basics.label}`
-    },
-    languageSkills() {
-      return this.resume.skills.filter(
-        (skill) => !skill.keywords.indexOf('language')
-      )
-    },
-    generalSkills() {
-      return this.resume.skills.filter((skill) =>
-        skill.keywords.indexOf('language')
-      )
     },
     profiles() {
       return this.resume.basics.profiles.filter((profile) =>
