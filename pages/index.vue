@@ -9,9 +9,9 @@
     @mouseleave="hover = false"
   >
     <div
+      v-if="!hover"
       class="absolute border-dashed border-red-400 border-2 print:border-none"
       style="height: 29.6cm; width: 21cm"
-      v-if="!hover"
     ></div>
     <div class="flex">
       <div class="px-12 pt-12 flex-grow">
@@ -26,9 +26,9 @@
 
         <main-block title="Expériences professionnelles">
           <div
-            class="flex flex-col"
             v-for="(work, index) in resume.work"
             :key="index"
+            class="flex flex-col"
           >
             <h4 class="text-base font-bold leading-none">
               {{ work.position }}
@@ -46,9 +46,9 @@
 
         <main-block title="Formation / Education">
           <div
-            class="flex flex-col"
             v-for="(education, index) in resume.education"
             :key="index"
+            class="flex flex-col"
           >
             <h4 class="text-base font-bold leading-none">
               {{ education.studyType }}
@@ -102,11 +102,11 @@
               skill.name
             }}</label>
             <meter
-              class="w-full"
               :id="`skill_${index}`"
               :value="skill.rating"
               min="0"
               max="5"
+              class="w-full"
             >
               {{ skill.rating }} sur 5
             </meter>
