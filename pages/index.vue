@@ -1,23 +1,58 @@
 <template>
   <div
-    class="container mx-auto bg-white font-sans text-xs shadow-lg rounded-xl print:rounded-none"
+    class="container mx-auto relative bg-white font-sans text-xs shadow-lg rounded-xl print:rounded-none"
     style="height: 29.6cm; width: 21cm"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
   >
-    <div
-      v-if="!hover"
-      class="absolute border-dashed border-red-400 border-2 print:border-none"
-      style="height: 29.6cm; width: 21cm"
-    ></div>
+    <welcome-overlay></welcome-overlay>
+
+    <tweets-overlay v-if="showTweets"></tweets-overlay>
+
     <empty-state v-if="$fetchState.pending"></empty-state>
     <error-state v-else-if="$fetchState.error"></error-state>
     <div v-else class="flex">
       <div class="px-12 pt-12 flex-grow">
-        <h1 class="text-4xl font-serif">{{ resume.basics.name }}</h1>
-        <h2 class="text-xs uppercase">{{ resume.basics.label }}</h2>
+        <header @mouseover="titleHover = true" @mouseleave="titleHover = false">
+          <h1 class="text-4xl font-serif">{{ resume.basics.name }}</h1>
+          <h2 class="text-xs uppercase">{{ resume.basics.label }}</h2>
+        </header>
+        <div v-if="titleHover" class="absolute top-0 mt-5 ml-72">
+          <img
+            src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
+            alt="Ma photo à moi !"
+            class="inline-block h-32 w-32 rounded-full"
+          />
+        </div>
 
-        <main-block title="Profil">
+        <main-block
+          title="Profil"
+          @mouseover.native="profileHover = true"
+          @mouseleave.native="profileHover = false"
+        >
+          <div
+            v-if="profileHover"
+            class="flex items-center absolute top-0 z-0"
+            style="left: 50px"
+          >
+            <svg
+              width="32"
+              height="11"
+              viewBox="0 0 32 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.5 10.5C27.3333 6.33334 15.3 0.500002 0.5 10.5"
+                stroke="black"
+              />
+              <path d="M4.5 0.5L1 10.5H10" stroke="black" />
+            </svg>
+            <button
+              class="font-hand pl-3 text-xl outline-none"
+              @click="toggleTweets"
+            >
+              En savoir plus
+            </button>
+          </div>
           <p class="text-xs">
             {{ resume.basics.summary }}
           </p>
@@ -67,10 +102,16 @@
         </main-block>
       </div>
       <div
-        class="p-12 pt-32 bg-gray-900 text-gray-200 text-xs flex-none w-64 rounded-r-xl print:rounded-none"
+        class="p-12 pt-32 bg-gray-900 text-gray-200 text-xs flex-none w-64 rounded-r-xl print:rounded-none bg-no-repeat bg-contain"
+        :class="{ 'bg-map': addressHover }"
         style="height: 29.6cm"
       >
-        <main-block class="text-gray-200" title="Détails">
+        <main-block
+          class="text-gray-200"
+          title="Détails"
+          @mouseover.native="addressHover = true"
+          @mouseleave.native="addressHover = false"
+        >
           <address>
             <span class="block">26 rue Bapst</span>
             <span class="block">Asnières-sur-Seine</span>
@@ -112,7 +153,12 @@
           </div>
         </main-block>
 
-        <main-block class="text-gray-200" title="Langues">
+        <main-block
+          class="text-gray-200"
+          title="Langues"
+          @mouseover.native="languageHover = true"
+          @mouseleave.native="languageHover = false"
+        >
           <div
             v-for="(language, index) in resume.languages"
             :key="index"
@@ -128,6 +174,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   async fetch() {
     this.resume = await fetch(
@@ -137,7 +184,10 @@ export default {
   data() {
     return {
       resume: {},
-      hover: false,
+      addressHover: false,
+      profileHover: false,
+      titleHover: false,
+      languageHover: false,
     }
   },
   computed: {
@@ -159,6 +209,9 @@ export default {
       return this.resume.basics.profiles.filter((profile) =>
         profile.network.indexOf('gitconnected')
       )
+    },
+    showTweets() {
+      return this.$store.state.showTweets
     },
   },
   methods: {
@@ -188,6 +241,9 @@ export default {
 
       return `${months[dateObject.month]} ${dateObject.year}`
     },
+    ...mapMutations({
+      toggleTweets: 'toggleTweets',
+    }),
   },
   head() {
     return {

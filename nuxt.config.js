@@ -15,7 +15,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;400&display=swap',
+          'https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&family=Oswald:wght@200;400&display=swap',
       },
     ],
   },
@@ -45,6 +45,7 @@ export default {
         fontFamily: {
           sans: ['Open Sans', 'sans-serif'],
           serif: ['Oswald', 'serif'],
+          hand: ['Shadows Into Light', 'sans-serif'],
         },
         fontSize: {
           tiny: '.60rem',
@@ -62,6 +63,12 @@ export default {
         extend: {
           screens: {
             print: { raw: 'print' },
+          },
+          backgroundImage: (theme) => ({
+            map: "url('/map.png')",
+          }),
+          margin: {
+            72: '18rem',
           },
         },
       },
