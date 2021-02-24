@@ -15,44 +15,48 @@
           <h1 class="text-4xl font-serif">{{ resume.basics.name }}</h1>
           <h2 class="text-xs uppercase">{{ resume.basics.label }}</h2>
         </header>
-        <div v-if="titleHover" class="absolute top-0 mt-5 ml-72">
-          <img
-            src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
-            alt="Ma photo à moi !"
-            class="inline-block h-32 w-32 rounded-full"
-          />
-        </div>
+        <fade-transition mode="out-in">
+          <div v-if="titleHover" class="absolute top-0 mt-14 ml-72">
+            <img
+              src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
+              alt="Ma photo à moi !"
+              class="inline-block h-16 w-16 rounded-full"
+            />
+          </div>
+        </fade-transition>
 
         <main-block
           title="Profil"
           @mouseover.native="profileHover = true"
           @mouseleave.native="profileHover = false"
         >
-          <div
-            v-if="profileHover"
-            class="flex items-center absolute top-0 z-0"
-            style="left: 50px"
-          >
-            <svg
-              width="32"
-              height="11"
-              viewBox="0 0 32 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <fade-transition mode="out-in">
+            <div
+              v-if="profileHover"
+              class="flex items-center absolute top-0 z-0"
+              style="left: 50px"
             >
-              <path
-                d="M31.5 10.5C27.3333 6.33334 15.3 0.500002 0.5 10.5"
-                stroke="black"
-              />
-              <path d="M4.5 0.5L1 10.5H10" stroke="black" />
-            </svg>
-            <button
-              class="font-hand pl-3 text-xl outline-none"
-              @click="toggleTweets"
-            >
-              En savoir plus
-            </button>
-          </div>
+              <svg
+                width="32"
+                height="11"
+                viewBox="0 0 32 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.5 10.5C27.3333 6.33334 15.3 0.500002 0.5 10.5"
+                  stroke="black"
+                />
+                <path d="M4.5 0.5L1 10.5H10" stroke="black" />
+              </svg>
+              <button
+                class="font-hand pl-3 text-xl outline-none"
+                @click="toggleTweets"
+              >
+                En savoir plus
+              </button>
+            </div>
+          </fade-transition>
           <p class="text-xs">
             {{ resume.basics.summary }}
           </p>
