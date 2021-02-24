@@ -43,7 +43,7 @@
       <fade-transition mode="out-in">
         <div
           v-if="showWelcome"
-          class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6"
+          class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"
@@ -54,6 +54,8 @@
                 src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
                 alt="Ma photo à moi !"
                 class="inline-block h-32 w-32 rounded-full"
+                width="400px"
+                height="400px"
               />
             </div>
             <div class="mt-3 text-center sm:mt-5">
@@ -64,7 +66,7 @@
                 Welcome to my resume!
               </h3>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
+                <p class="text-base text-gray-900">
                   J'ai ajouté un peu d'interactivité dans mon CV. <br />À vous
                   de jouer avec !
                 </p>
@@ -74,7 +76,7 @@
           <div class="mt-5 sm:mt-6">
             <button
               type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:text-sm"
+              class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 text-gray-900 bg-gray-400 text-base font-medium text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:text-sm"
               @click="toggleWelcome"
             >
               Allons-y

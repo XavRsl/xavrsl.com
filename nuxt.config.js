@@ -26,6 +26,10 @@ export default {
         charset: 'utf-8',
       },
     ],
+    htmlAttrs: {
+      class: 'bg-gray-500',
+      lang: 'fr',
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

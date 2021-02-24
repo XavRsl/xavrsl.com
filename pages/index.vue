@@ -21,6 +21,8 @@
               src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
               alt="Ma photo à moi !"
               class="inline-block h-16 w-16 rounded-full"
+              width="400px"
+              height="400px"
             />
           </div>
         </fade-transition>
@@ -73,7 +75,7 @@
               <span class="text-sm text-gray-700">{{ work.company }}</span>
             </h4>
             <em
-              class="uppercase text-gray-500 font-bold font-serif not-italic text-tiny pt-2 pb-1 tracking-widest"
+              class="uppercase text-gray-600 font-bold font-serif not-italic text-tiny pt-2 pb-1 tracking-widest"
               >{{ printDate(work.start) }} - {{ printDate(work.end) }}</em
             >
             <p class="text-xs pb-3">
@@ -95,7 +97,7 @@
               }}</span>
             </h4>
             <em
-              class="uppercase text-gray-500 font-bold font-serif not-italic text-tiny pt-2 pb-1 tracking-widest"
+              class="uppercase text-gray-600 font-bold font-serif not-italic text-tiny pt-2 pb-1 tracking-widest"
               >{{ printDate(education.start) }} -
               {{ printDate(education.end) }}</em
             >
