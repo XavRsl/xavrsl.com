@@ -119,8 +119,7 @@
           @mouseleave.native="addressHover = false"
         >
           <address>
-            <span class="block">26 rue Bapst</span>
-            <span class="block">Asnières-sur-Seine</span>
+            <span class="block">{{ resume.basics.region }}</span>
             <a class="block" href="tel:+33630520817">06 30 52 08 17</a>
             <a class="block" href="mailto:roussel.xavier@gmail.com"
               >roussel.xavier@gmail.com</a
