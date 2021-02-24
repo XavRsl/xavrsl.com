@@ -77,6 +77,7 @@ export default {
           }),
           margin: {
             72: '18rem',
+            14: '3.5rem',
           },
         },
       },
