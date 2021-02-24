@@ -54,13 +54,8 @@
           <a
             class="twitter-timeline"
             href="https://twitter.com/XavRsl/likes?ref_src=twsrc%5Etfw"
-            >Tweets Liked by @XavRsl</a
+            >Tweets aimés par @XavRsl</a
           >
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
-          ></script>
         </div>
       </fade-transition>
     </div>
@@ -74,6 +69,9 @@ export default {
     showTweets() {
       return this.$store.state.showTweets
     },
+  },
+  mounted() {
+    window?.twttr?.widgets?.load() // https://9sako6.com/posts/nuxt_embed_twitter
   },
   methods: {
     ...mapMutations({

@@ -18,6 +18,14 @@ export default {
           'https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&family=Oswald:wght@200;400&display=swap',
       },
     ],
+    script: [
+      {
+        async: true,
+        defer: true,
+        src: 'https://platform.twitter.com/widgets.js',
+        charset: 'utf-8',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
