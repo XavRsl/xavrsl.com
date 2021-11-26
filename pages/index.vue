@@ -132,7 +132,7 @@
           <span class="block">
             <a :href="resume.basics.url">{{ resume.basics.url }}</a>
           </span>
-          <span class="block" v-for="(profile, index) in profiles" :key="index">
+          <span v-for="(profile, index) in profiles" :key="index" class="block">
             <a :href="profile.url">{{ profile.network }}</a>
             - {{ profile.username }}
           </span>
