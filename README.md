@@ -6,7 +6,7 @@ https://xavrsl.com
 
 ## What I'm using
 
-### GitConnect
+### GitConnected
 I used to use an online resume generator as I found it convenient to have a centralised place to keep track of my work experience, education, skills and so on. But I didn't like being limited to a template and having to pay a monthly fee for a service that I didn't really use on a regular basis. Then I discoverd https://gitconnected.com/xavrsl! It's a great tool and is open-source. But the templates they provide didn't really work for me. So I decided to ceate a website and use the GitConnect API.
 
 ### NuxtJS
