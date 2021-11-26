@@ -80,6 +80,7 @@ export default {
             map: "url('/map.png')",
           }),
           margin: {
+            picture: '27rem',
             72: '18rem',
             14: '3.5rem',
           },

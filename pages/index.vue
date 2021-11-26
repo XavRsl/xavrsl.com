@@ -16,11 +16,11 @@
           <h2 class="text-xs uppercase">{{ resume.basics.label }}</h2>
         </header>
         <fade-transition mode="out-in">
-          <div v-if="titleHover" class="absolute top-0 mt-14 ml-72">
+          <div v-if="titleHover" class="absolute top-0 mt-3 ml-picture">
             <img
               src="https://pbs.twimg.com/profile_images/905922965849739264/qsS4wUMH_400x400.jpg"
               alt="Ma photo à moi !"
-              class="inline-block h-16 w-16 rounded-full"
+              class="inline-block h-32 w-32 rounded-full"
               width="400px"
               height="400px"
             />
