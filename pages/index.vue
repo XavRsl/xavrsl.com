@@ -119,6 +119,7 @@
           @mouseleave.native="addressHover = false"
         >
           <address>
+            <span class="block">{{ resume.basics.headline }}</span>
             <span class="block">{{ resume.basics.region }}</span>
             <a class="block" href="tel:+33630520817">06 30 52 08 17</a>
             <a class="block" href="mailto:roussel.xavier@gmail.com"
@@ -128,13 +129,13 @@
         </main-block>
 
         <main-block class="text-gray-200" title="Liens">
-          <a
-            v-for="(profile, index) in profiles"
-            :key="index"
-            class="block"
-            :href="profile.url"
-            >{{ profile.network }}</a
-          >
+          <span class="block">
+            <a :href="resume.basics.url">{{ resume.basics.url }}</a>
+          </span>
+          <span class="block" v-for="(profile, index) in profiles" :key="index">
+            <a :href="profile.url">{{ profile.network }}</a>
+            - {{ profile.username }}
+          </span>
         </main-block>
 
         <main-block class="text-gray-200" title="Compétences">
