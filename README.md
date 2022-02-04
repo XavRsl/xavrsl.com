@@ -12,8 +12,8 @@ I used to use an online resume generator as I found it convenient to have a cent
 ### NuxtJS
 The site uses https://nuxtjs.org/. I could have just created a VueJS site and it would have been fine but I want to be able to create a Blog on this website in the future and Nuxt's content module is so great I really want to use it.
 
-### TailwindCSS / TailwindUI
-I'm a big fan of https://tailwindcss.com/. As a developper I don't really want to spend days figuring out what CSS I should use to center an element on the page consistently on every browser. That's what frameworks are for! And I also want my page to stay as light as possible so I don't want to load a bunch of useless CSS or JS. Thankfully, TailwindCSS can be loaded into NuxtJS without any effort and it is configured so that only the css you use will eventually be loaded on your page.
+### Tailwind CSS / Tailwind UI
+I'm a big fan of https://tailwindcss.com/. As a developper I don't really want to spend days figuring out what CSS I should use to center an element on the page consistently on every browser. That's what frameworks are for! And I also want my page to stay as light as possible so I don't want to load a bunch of useless CSS or JS. Thankfully, Tailwind CSS can be loaded into NuxtJS without any effort and it is configured so that only the css you use will eventually be loaded on your page.
 
 ### Netlify
 https://www.netlify.com/ is a great way to host a website. The deployment workflow can be handled by GitHub Actions really easily and there's a ton of services like serverless functions, forms, analytics that can be added on your website in the blink of an eye.
