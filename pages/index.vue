@@ -122,8 +122,8 @@
             <span class="block">{{ resume.basics.headline }}</span>
             <span class="block">{{ resume.basics.region }}</span>
             <a class="block" href="tel:+33630520817">06 30 52 08 17</a>
-            <a class="block" href="mailto:roussel.xavier@gmail.com"
-              >roussel.xavier@gmail.com</a
+            <a class="block" href="mailto:contact@xavrsl.com"
+              >contact@xavrsl.com</a
             >
           </address>
         </main-block>
