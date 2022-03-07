@@ -18,6 +18,9 @@ I'm a big fan of https://tailwindcss.com/. As a developper I don't really want t
 ### Netlify
 https://www.netlify.com/ is a great way to host a website. The deployment workflow can be handled by GitHub Actions really easily and there's a ton of services like serverless functions, forms, analytics that can be added on your website in the blink of an eye.
 
+### ImprovMx
+Free email forwrding tool. Nice ! [ImprovMX](https://app.improvmx.com/)
+
 ## Plans for the future
 Here's a list of the features I'd like to add to my site in the future.
 - [ ] As mentionned above, a blog
